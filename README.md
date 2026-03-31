@@ -26,6 +26,27 @@ This project demonstrates an intelligent API debugging system that can:
 - Applies correction
 - Retries request successfully
 
+## Example
+
+### Input
+
+```json
+{
+  "email": "test@example.com"
+}
+
+### Output
+Detects missing required field: password
+Suggests fix: add "password" to request body
+Automatically adds missing field (self-healing)
+Retries request successfully with corrected data
+
+### Tech Stack
+Python
+Streamlit
+Requests
+Modular Architecture (Rules Engine + Analyzer + AI Engine)
+
 ### UI Demo
 Run:
 
