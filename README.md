@@ -16,7 +16,7 @@ This project demonstrates an intelligent API debugging system that can:
 - AI-like suggestion generation
 - Self-healing request modification
 - Automatic retry mechanism
-- Simple UI using Streamlit
+- Interactive UI using Streamlit
 
 ## Demo
 
@@ -26,23 +26,8 @@ This project demonstrates an intelligent API debugging system that can:
 - Applies correction
 - Retries request successfully
 
-### UI
-- Input API URL and data
-- View issues, suggestions, and final response
+### UI Demo
+Run:
 
-## Example
-
-Input:
-{
-  "email": "test@example.com"
-}
-
-Output:
-- Detects missing password
-- Suggests fix
-- Auto-adds password
-- Retries successfully
-
-## Goal
-
-To demonstrate feasibility of an intelligent, agentic API debugging and optimization system.
+```bash
+streamlit run app.py
