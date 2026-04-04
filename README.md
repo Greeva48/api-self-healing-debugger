@@ -1,54 +1,104 @@
-# ⚡ Self-Healing API Debugger (Prototype)
+# ⚡ Agentic Self-Healing API Debugger (PoC)
 
 🚀 Built as part of my Google Summer of Code 2026 proposal for API Dash.
 
-## Overview
+---
 
-This project demonstrates an intelligent API debugging system that can:
-- Detect issues in API requests
-- Suggest fixes
-- Automatically apply self-healing
-- Retry requests to achieve success
+## 🎥 Demo Video
 
-## Features
+👉 https://drive.google.com/file/d/1uX3yqTJDTSeXKvV-O7WwmcrRL8U6G-9J/view?usp=sharing
 
-- Rule-based API debugging
-- AI-like suggestion generation
-- Self-healing request modification
-- Automatic retry mechanism
-- Interactive UI using Streamlit
+---
 
-## Demo
+## 🧠 Overview
 
-### CLI Output
-- Detects missing fields
-- Suggests fixes
-- Applies correction
-- Retries request successfully
+This project demonstrates an intelligent **agent-based API debugging system** that can automatically detect failures, analyze issues, apply fixes, and retry requests without manual intervention.
 
-## Example
+The system follows a self-healing pipeline:
+
+**Executor → Analyzer → Fixer → Retry → Evaluation**
+
+---
+
+## ✨ Features
+
+- Detects API failures (e.g., 404, invalid endpoints)
+- Analyzes root cause of errors
+- Applies heuristic-based fixes (pluralization, endpoint correction)
+- Automatically retries corrected requests
+- Displays full debugging flow in a modern UI
+- Shows URL transformation (Before → After)
+
+---
+
+## ⚙️ How It Works
+
+### 1️⃣ Executor
+Sends the initial API request and captures failure.
+
+### 2️⃣ Analyzer
+Identifies the issue (e.g., "Endpoint not found").
+
+### 3️⃣ Fixer
+Applies intelligent corrections:
+- `/post` → `/posts`
+- Fuzzy matching for similar endpoints
+
+### 4️⃣ Retry
+Retries request using the corrected URL.
+
+### 5️⃣ Evaluation
+Determines success or failure of the fix.
+
+---
+
+## 📌 Example
 
 ### Input
+https://jsonplaceholder.typicode.com/post
 
-```json
-{
-  "email": "test@example.com"
-}
+## 🧪 Test API
 
-### Output
-Detects missing required field: password
-Suggests fix: add "password" to request body
-Automatically adds missing field (self-healing)
-Retries request successfully with corrected data
+This project uses JSONPlaceholder (a mock REST API) to simulate real-world API failures.
 
-### Tech Stack
-Python
-Streamlit
-Requests
-Modular Architecture (Rules Engine + Analyzer + AI Engine)
+Example:
+- https://jsonplaceholder.typicode.com/post → ❌ Invalid endpoint (404)
+- https://jsonplaceholder.typicode.com/posts → ✅ Valid endpoint (200)
 
-### UI Demo
-Run:
+This allows the system to demonstrate automatic error detection and self-healing behavior.
 
+
+### System Behavior
+- Detects 404 error
+- Identifies incorrect endpoint
+- Fixes `post` → `posts`
+- Retries request
+- Returns 200 success ✅
+
+---
+
+## 🧩 Tech Stack
+
+### Backend
+- Node.js
+- Express.js
+
+### Frontend
+- React (Vite)
+- Tailwind CSS
+- Framer Motion
+
+---
+
+## 🖥️ Running Locally
+
+### 1. Backend
 ```bash
-streamlit run app.py
+node server.js
+
+### 2. Frontend
+cd client
+npm install
+npm run dev
+
+
