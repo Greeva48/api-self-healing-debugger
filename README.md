@@ -93,12 +93,12 @@ This allows the system to demonstrate automatic error detection and self-healing
 ## 🖥️ Running Locally
 
 ### 1. Backend
-```bash
+
+**```bash **
 node server.js
 
 ### 2. Frontend
+
 cd client
 npm install
 npm run dev
-
-
