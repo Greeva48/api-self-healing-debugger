@@ -100,5 +100,5 @@ node server.js
 ### 2. Frontend
 
 cd client
-npm install
+npm install & 
 npm run dev
